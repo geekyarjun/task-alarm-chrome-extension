@@ -15,4 +15,4 @@ Any suggestion and changes are welcome.
 
 <img src="https://lh3.googleusercontent.com/JlmSgTa6pZ5LV3P13ILVNOoVi6oqAZcas6WXlbwWlusyzXf4_rjUUn-7wSVB8pdB6JkgPq_-x1LVgYicbd3SBk35DdqDUC7NIpWpzDzWdC3SSLuUe3_ZT9nHOpZUOex2wYF8dn9F=w482-h442-no" />
 
-The extension look as this.
+The extension look as this:
