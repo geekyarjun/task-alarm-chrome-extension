@@ -2,7 +2,7 @@
 This is a simple chrome-extension, in which one can set alarm or reminder for tasks, and it will remind them of the task.
 ## How to install
 1. First download or clone this repo.
-2. If you have downloaded please extract the code somewhere.
+2. If you have downloaded please extract the code somewhere and run ```npm i```
 1. Now to install this you simply need to open Google Chrome Browser.
 2. Click on menu i.e three dots on the top right corner.
 3. Then click on ```More Tools``` and then you will see ```Extension``` option just click on it
