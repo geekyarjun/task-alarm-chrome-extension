@@ -1,0 +1,224 @@
+$containerWidth: 40rem;
+$containerHeight: 40rem;
+$primaryColor: #eae7dc;
+$secondaryColor: #e85a4f;
+$border-radius: .5rem;
+$border: 2px solid $secondaryColor;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito' !important;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+.container {
+    width: $containerWidth;
+    height: $containerHeight;
+    background-color: rgba($primaryColor, .7);
+    padding: 1.6rem;
+ 
+    .scheduleAlarmContainer {
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+        grid-gap: 3rem;
+
+        .taskInputField {
+            width: 100%;
+            padding: .6rem;
+            border: $border;
+            outline: none;
+            border-radius: $border-radius;
+            font-size: 2rem;
+            grid-column: 1 / -1;
+        }
+
+        .daySelect {
+            outline: none;
+            border: $border;
+            padding: .5rem;
+            border-radius: $border-radius;
+            background-color: white;
+            font-size: 1.7rem;
+
+            grid-column: 1 / 5;
+        }
+
+        .inputTime {
+            border: $border;
+            border-radius: $border-radius;
+            outline: none;
+            padding: .6rem;
+            font-size: 2rem;
+
+            grid-column: 5 / -1;
+        }
+
+        .setAlarmButton {
+            grid-column: 1 / -1;
+            border: none;
+            outline: none;
+            border-radius: $border-radius;
+            background-color: #e85a4f;
+            color: white;
+            margin-top: 11rem;
+            font-size: 1.7rem;
+            padding: .7rem;
+
+            transition: .2s linear;
+
+            &:hover {
+                transform: translateY(-.5rem);
+            }
+        }
+
+    }
+}
+
+.warningMessage {
+    font-size: 1.5rem;
+    color: #e85a4f;
+
+    grid-column: 1 / -1;
+
+}
+
+.bottomNavigation {
+    grid-column: 3 / 7;
+    font-size: 1.2rem;
+    justify-self: center;
+    text-align: center;
+    margin-top: 2rem;
+
+    span {
+        margin-right: .5rem;
+        cursor: pointer;
+    }
+
+    .activeBottomNav {
+        color: $secondaryColor;
+    }
+}
+
+.inputSelect {
+    grid-column: 5 / -1;
+    border: 2px solid #e85a4f;
+    border-radius: .5rem;
+    position: relative;
+
+    input {
+        width: 75%;
+        border: none;
+        outline: none;
+        padding: .6rem;
+        font-size: 2rem;
+    }
+
+    select {
+        width: 25%;
+        height: 100%;
+        border: none;
+        outline: none;
+        padding: .3rem;
+        font-size: 1.7rem;
+        position: absolute;
+        background-color: white;
+    }
+}
+
+.tasks-container {
+    height: 88.5%;
+    overflow: auto;
+    word-break: break-all;
+
+    ul {
+        list-style-type: upper-roman;
+        padding: 1rem;
+
+        li {
+            font-size: 2rem;
+            .cross-button {
+                color: $secondaryColor;
+                cursor: pointer;
+                width: 1.5rem;
+                height: 1.5rem;
+                margin-left: 1rem;
+                
+                transition: .2s linear;
+
+                &:hover {
+                    // color: white;
+                    transform: scale(1.5);
+                }
+            }
+        }
+
+    }
+
+}
+
+#snackbar {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    background-color: #fff;
+    color: $secondaryColor;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    // bottom: 30px;
+    top: 10px;
+    font-size: 17px;
+    box-shadow: 0px 5px 6px 0px rgba(0, 0, 0, .2);
+}
+
+#snackbar.show {
+    visibility: visible;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+
+
+.warning-vibration-animation {
+    animation: warning-vibration-animation .3s linear;
+}
+
+.warning-vibration-animation-toggle {
+    animation: warning-vibration-animation .3s linear;
+}
+
+@keyframes warning-vibration-animation {
+    0% { 
+        transform: translateX(8px) 
+    }
+    25% {
+        transform: translateX(-8px) 
+    }
+    50% {
+        transform: translateX(8px)
+    }
+    75% {
+        transform: translateX(-8px)
+    }
+    100% {
+        transform: translateX(0px)
+    }
+}
+
+
+@keyframes fadein {
+  from {top: 0; opacity: 0;}
+  to {top: 10px; opacity: 1;}
+}
+
+@keyframes fadeout {
+  from {top: 10px; opacity: 1;}
+  to {top: 0; opacity: 0;}
+}
